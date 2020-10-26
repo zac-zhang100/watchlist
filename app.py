@@ -17,6 +17,7 @@ movies = [
     {'title':	'The	Pork	of	Music',	'year':	'2012'},
 ]
 
+#render_template用作模板渲染函数，第一个参数是模板，所在根目录为templates文件夹，后面的参数为模板中的变量
 @app.route('/')
 def index():
     return render_template('index.html',name=name,movies=movies)

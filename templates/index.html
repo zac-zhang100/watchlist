@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ name }}'s watchlist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
 </head>
 <body>
-<h2>{{ name }}'s watchlist</h2>
+<h2>
+    <img alt="avater" class="avatar" src="{{ url_for('static',filename='images/avatar.jpeg')}}">
+    {{ name }}'s watchlist</h2>
 {# 使用length过滤器获取变量的长度 #}
 <p>{{ movies|length }} Titles</p>
-<ul>
+<ul class="movie-list">
     {% for movie in movies %}
-    <li> {{ movie }} - {{ movie.year }}</li>
+    <li> {{ movie.title }} - {{ movie.year }}</li>
     {% endfor %}
 </ul>
 	<footer>
         <small>&copy;	2018	<a	href="http://helloflask.com/tutori al">HelloFlask</a></small>
     </footer>
+<img alt="walking totoro" class="totoro" src="{{ url_for('static',filename='images/totoro.jpg')}}">
 </body>
 </html>
